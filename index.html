@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아름중학교 급식 알리미</title>
+    <!-- Google Fonts: Pretendard -->
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">🌱 급식 알리미</div>
+            <p class="subtitle">나만의 채식 단계, 알레르기 음식에 맞춰 주의해야 할 학교 급식을 확인하세요.</p>
+        </header>
+
+        <main>
+            <section class="controls">
+                <div class="control-group">
+                    <label for="vegType">나의 채식 단계 또는 알레르기 음식</label>
+                    <select id="vegType">
+                        <option value="none">해당 없음 (알레르기만 확인)</option>
+                        <option value="vegan">비건 (Vegan) - 모든 동물성 배제</option>
+                        <option value="lacto">락토 (Lacto) - 우유 허용</option>
+                        <option value="ovo">오보 (Ovo) - 계란 허용</option>
+                        <option value="lacto-ovo">락토오보 (Lacto-Ovo) - 우유/계란 허용</option>
+                        <option value="pesco">페스코 (Pesco) - 해산물/유제품 허용</option>
+                        <option value="pollo">폴로 (Pollo) - 닭고기/해산물/유제품 허용</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>추가 알레르기 설정</label>
+                    <div class="allergy-grid">
+                        <label><input type="checkbox" name="allergy" value="1"> 난류</label>
+                        <label><input type="checkbox" name="allergy" value="2"> 우유</label>
+                        <label><input type="checkbox" name="allergy" value="3"> 메밀</label>
+                        <label><input type="checkbox" name="allergy" value="4"> 땅콩</label>
+                        <label><input type="checkbox" name="allergy" value="5"> 대두</label>
+                        <label><input type="checkbox" name="allergy" value="6"> 밀</label>
+                        <label><input type="checkbox" name="allergy" value="7"> 고등어</label>
+                        <label><input type="checkbox" name="allergy" value="8"> 게</label>
+                        <label><input type="checkbox" name="allergy" value="9"> 새우</label>
+                        <label><input type="checkbox" name="allergy" value="10"> 돼지고기</label>
+                        <label><input type="checkbox" name="allergy" value="11"> 복숭아</label>
+                        <label><input type="checkbox" name="allergy" value="12"> 토마토</label>
+                        <label><input type="checkbox" name="allergy" value="13"> 아황산류</label>
+                        <label><input type="checkbox" name="allergy" value="14"> 호두</label>
+                        <label><input type="checkbox" name="allergy" value="15"> 닭고기</label>
+                        <label><input type="checkbox" name="allergy" value="16"> 쇠고기</label>
+                        <label><input type="checkbox" name="allergy" value="17"> 오징어</label>
+                        <label><input type="checkbox" name="allergy" value="18"> 조개류</label>
+                        <label><input type="checkbox" name="allergy" value="19"> 잣</label>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="meal-controls" id="mealControls">
+                <div class="selected-school-info" id="selectedSchoolInfo">
+                    아름중학교
+                </div>
+                <div class="month-selector">
+                    <button id="prevMonthBtn">&lt;</button>
+                    <span id="currentMonthLabel">2026년 04월</span>
+                    <button id="nextMonthBtn">&gt;</button>
+                </div>
+            </section>
+
+            <section class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>데이터를 불러오는 중입니다...</p>
+            </section>
+
+            <section class="meal-results" id="mealResults">
+                <!-- 급식 결과가 카드 형태로 렌더링됨 -->
+                <div class="empty-state">학교를 검색하고 선택하면 식단 정보가 나타납니다.</div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
