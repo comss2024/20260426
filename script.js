@@ -84,6 +84,9 @@ function renderMeals(meals) {
     const restricted = [...new Set([...vegRestricted, ...checkedAllergies])];
 
     meals.forEach(meal => {
+        // 석식(저녁) 제외
+        if (meal.MMEAL_SC_NM === '석식') return;
+
         const dateStr = meal.MLSV_YMD; // "20260401"
         const formattedDate = `${dateStr.substring(0, 4)}.${dateStr.substring(4, 6)}.${dateStr.substring(6, 8)}`;
         
